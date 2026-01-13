@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>غرفة تجارة بغداد</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- إعدادات عامة --- */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #030e2e;
+            color: white;
+            overflow-x: hidden; /* منع التمرير الأفقي */
+        }
+
+        /* --- الهيدر العلوي (الكمبيوتر) --- */
+        .top-header {
+            display: flex;
+            justify-content: space-between; /* توزيع العناصر: يمين، وسط، يسار */
+            align-items: center;
+            padding: 15px 40px;
+            background-color: #030e2e;
+            width: 100%;
+        }
+
+        .header-text { 
+            text-align: center; 
+            line-height: 1.4; 
+            font-size: 14px; 
+            width: 30%; /* تحديد عرض لضمان التوزيع */
+        }
+        
+        /* ضبط النص العربي ليكون أقصى اليمين */
+        .header-text:first-child {
+            text-align: right; 
+        }
+
+        /* ضبط النص الإنجليزي */
+        .header-text.en { 
+            text-align: left; 
+            direction: ltr; 
+        }
+        
+        .header-text h3, .header-text h4, .header-text h5 { font-weight: normal; margin: 0; }
+        
+        .logo-container {
+            text-align: center;
+            width: 20%;
+        }
+        
+        .logo-container img { height: 80px; width: auto; }
+
+        /* --- شريط الأزرار --- */
+        .nav-strip {
+            background-color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap; 
+        }
+
+        .btn-nav {
+            background-color: #2b2b2b;
+            color: white;
+            text-decoration: none;
+            padding: 10px 30px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: background 0.3s;
+            min-width: 160px;
+        }
+
+        .btn-nav:hover { background-color: #444; }
+        .btn-store { direction: ltr; }
+
+        /* --- المحتوى الرئيسي --- */
+        .main-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 60vh;
+        }
+        .card {
+            background-color: white;
+            width: 400px;
+            height: 300px;
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        .btn-data {
+            background-color: #004d26;
+            color: white;
+            text-decoration: none;
+            padding: 15px 60px;
+            font-size: 24px;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: transform 0.2s;
+        }
+        .btn-data:hover { background-color: #006633; transform: scale(1.05); }
+
+        /* --- التجاوب مع الجوال (التعديل المطلوب) --- */
+        @media (max-width: 768px) {
+            /* تعديل الهيدر ليبقى صفاً واحداً */
+            .top-header {
+                display: flex;
+                flex-direction: row; /* إجبار العناصر تكون بجانب بعض */
+                justify-content: space-between;
+                padding: 10px 5px; /* تقليل الحواف */
+                gap: 2px;
+            }
+
+            /* تصغير النصوص لتتسع في الشاشة */
+            .header-text {
+                font-size: 9px; /* خط صغير للهاتف */
+                width: 35%; /* مساحة للنص */
+                line-height: 1.3;
+            }
+
+            .header-text h3 { font-size: 10px; font-weight: bold; }
+
+            /* تصغير الشعار */
+            .logo-container { width: 20%; }
+            .logo-container img { height: 50px; } /* شعار أصغر */
+
+            /* --- الأزرار (كما طلبت 2 بجانب بعض) --- */
+            .nav-strip {
+                display: grid; 
+                grid-template-columns: 1fr 1fr;
+                gap: 8px;
+                padding: 10px;
+            }
+
+            .btn-nav {
+                width: 100%;
+                min-width: auto;
+                font-size: 13px;
+                padding: 10px 2px;
+            }
+
+            .card { width: 90%; }
+            .btn-data { padding: 15px 40px; font-size: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="top-header">
+        <div class="header-text">
+            <h3>جمهورية العراق</h3>
+            <h4>اتحاد الغرف التجارية</h4>
+            <h5>غرفة تجارة بغداد</h5>
+        </div>
+
+        <div class="logo-container">
+            <img src="logo.png" alt="شعار">
+        </div>
+
+        <div class="header-text en">
+            <h3>Republic Of Iraq</h3>
+            <h4>Federation of Chambers of Commerce</h4>
+            <h5>Chambere Of Baghdad</h5>
+        </div>
+    </header>
+
+    <nav class="nav-strip">
+        <a href="https://tajr.bcc.iq/login" class="btn-nav">
+            <i class="fa-solid fa-user"></i>
+            تسجيل الدخول
+        </a>
+        <a href="https://bcc.iq/" class="btn-nav">
+            <i class="fa-solid fa-phone-flip"></i>
+            اتصل بنا
+        </a>
+        <a href="#" class="btn-nav btn-store">
+            GooglePlay
+            <i class="fa-brands fa-google-play"></i>
+        </a>
+        <a href="#" class="btn-nav btn-store">
+            AppStore
+            <i class="fa-brands fa-apple"></i>
+        </a>
+    </nav>
+
+    <main class="main-content">
+        <div class="card">
+            <a href="viewcertificate.html" class="btn-data">عرض البيانات</a>
+        </div>
+    </main>
+
+</body>
+</html>
